@@ -3,111 +3,58 @@
 
 @string{aps = {American Physical Society,}}
 
-@book{einstein1920relativity,
-  title={Relativity: the Special and General Theory},
-  author={Einstein, Albert},
-  year={1920},
-  publisher={Methuen & Co Ltd},
-  html={relativity.html}
-}
-
-@book{einstein1956investigations,
+@article{baankestad2024flexible,
   bibtex_show={true},
-  title={Investigations on the Theory of the Brownian Movement},
-  author={Einstein, Albert},
-  year={1956},
-  publisher={Courier Corporation},
-  preview={brownian-motion.gif}
+  html={https://github.com/mariabankestad/SE2-GNN},
+  abstract={This paper presents a novel approach for constructing graph neural networks equivariant to 2D rotations and translations and leveraging them as PDE surrogates on non-gridded domains. We show that aligning the representations with the principal axis allows us to sidestep many constraints while preserving SE(2) equivariance. By applying our model as a surrogate for fluid flow simulations and conducting thorough benchmarks against non-equivariant models, we demonstrate significant gains in terms of both data efficiency and accuracy.},
+  title={Flexible SE(2) graph neural networks with applications to PDE surrogates},
+  author={B{\aa}nkestad, Maria and Mogren, Olof and Pirinen, Aleksis},
+  journal={arXiv preprint arXiv:2405.20287},
+  preview={small.gif},
+  year={2024}
 }
 
-@article{einstein1950meaning,
-  abbr={AJP},
-  bibtex_show={true},
-  title={The meaning of relativity},
-  author={Einstein, Albert and Taub, AH},
-  journal={American Journal of Physics},
-  volume={18},
-  number={6},
-  pages={403--404},
-  year={1950},
-  publisher={American Association of Physics Teachers}
+@article{baankestad2023carbohydrate,  
+bibtex_show={true},
+ html={https://github.com/mariabankestad/GeqShift},
+ abstract={Carbohydrates, vital components of biological systems, are well-known for their structural diversity. Nuclear Magnetic Resonance (NMR) spectroscopy plays a crucial role in understanding their intricate molecular arrangements and is essential in assessing and verifying the molecular structure of organic molecules. An important part of this process is to predict the NMR chemical shift from the molecular structure. This work introduces a novel approach that leverages E(3) equivariant graph neural networks to predict carbohydrate NMR spectra. Notably, our model achieves a substantial reduction in mean absolute error, up to threefold, compared to traditional models that rely solely on two-dimensional molecular structure. Even with limited data, the model excels, highlighting its robustness and generalization capabilities. The implications are far-reaching and go beyond an advanced understanding of carbohydrate structures and spectral interpretation. For example, it could accelerate research in pharmaceutical applications, biochemistry, and structural biology, offering a faster and more reliable analysis of molecular structures. Furthermore, our approach is a key step towards a new data-driven era in spectroscopy, potentially influencing spectroscopic techniques beyond NMR.},
+  title={Carbohydrate NMR chemical shift predictions using E(3) equivariant graph neural networks},
+  author={B{\aa}nkestad, Maria and Dorst, Keven M and Widmalm, G{\"o}ran and R{\"o}nnols, Jerk},
+  journal={arXiv preprint arXiv:2311.12657},
+  preview={drawing_small.png},
+  year={2023}
 }
 
-@article{PhysRev.47.777,
-  abbr={PhysRev},
-  title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author={Einstein, A. and Podolsky, B. and Rosen, N.},
-  abstract={In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal={Phys. Rev.},
-  location={New Jersey},
-  volume={47},
-  issue={10},
-  pages={777--780},
-  numpages={0},
-  year={1935},
-  month={May},
-  publisher=aps,
-  doi={10.1103/PhysRev.47.777},
-  url={http://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html={https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf={example_pdf.pdf},
-  altmetric={248277},
-  dimensions={true},
-  google_scholar_id={qyhmnyLat1gC},
-  video={https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ},
-  additional_info={. *More Information* can be [found here](https://github.com/alshedivat/al-folio/)},
-  selected={true}
+@article{baankestad2024ising,
+bibtex_show={true},
+  title={Ising on the Graph: Task-specific Graph Subsampling via the Ising Model},
+  author={B{\aa}nkestad, Maria and Andersson, Jennifer and Mair, Sebastian and Sj{\"o}lund, Jens},
+  journal={arXiv preprint arXiv:2402.10206},
+  year={2024},
+  abstract = {Reducing a graph while preserving its overall structure is an important problem with many applications. Typically, the reduction approaches either remove edges (sparsification) or merge nodes (coarsening) in an unsupervised way with no specific downstream task in mind. In this paper, we present an approach for subsampling graph structures using an Ising model defined on either the nodes or edges and learning the external magnetic field of the Ising model using a graph neural network. Our approach is task-specific as it can learn how to reduce a graph for a specific downstream task in an end-to-end fashion. The utilized loss function of the task does not even have to be differentiable. We showcase the versatility of our approach on three distinct applications: image segmentation, 3D shape sparsification, and sparse approximate matrix inverse determination.},
+  preview = {ising_small.png}
 }
 
-@article{einstein1905molekularkinetischen,
-  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author={Einstein, A.},
-  journal={Annalen der physik},
-  volume={322},
-  number={8},
-  pages={549--560},
-  year={1905},
-  publisher={Wiley Online Library}
+@article{baankestad2023variational,
+bibtex_show={true},
+abstract = {We present elliptical processes—a family of non-parametric probabilistic models that subsumes Gaussian processes and Student's t processes. This generalization includes a range of new heavy-tailed behaviors while retaining computational tractability. Elliptical processes are based on a representation of elliptical distributions as a continuous mixture of Gaussian distributions. We parameterize this mixture distribution as a spline normalizing flow, which we train using variational inference. The proposed form of the variational posterior enables a sparse variational elliptical process applicable to large-scale problems. We highlight advantages compared to Gaussian processes through regression and classification experiments. Elliptical processes can supersede Gaussian processes in several settings, including cases where the likelihood is non-Gaussian or when accurate tail modeling is essential.},
+title={Variational Elliptical Processes},
+author={Maria Margareta B{\r{a}}nkestad and Jens Sj{\"o}lund and Jalil Taghia and Thomas B. Sch{\"o}n},
+journal={Transactions on Machine Learning Research},
+issn={2835-8856},
+year={2023},
+url={https://openreview.net/forum?id=djN3TaqbdA},
+html={https://openreview.net/forum?id=djN3TaqbdA},
+preview = {elliptical.png},
 }
 
-@article{einstein1905movement,
-  abbr={Ann. Phys.},
-  title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author={Einstein, A.},
-  journal={Ann. Phys.},
-  volume={17},
-  pages={549--560},
-  year={1905}
-}
-
-@article{einstein1905electrodynamics,
-  title={On the electrodynamics of moving bodies},
-  author={Einstein, A.},
-  year={1905}
-}
-
-@Article{einstein1905photoelectriceffect,
-  bibtex_show={true},
-  abbr={Ann. Phys.},
-  title="{{\"U}ber einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}",
-  author={Albert Einstein},
-  abstract={This is the abstract text.},
-  journal={Ann. Phys.},
-  volume={322},
-  number={6},
-  pages={132--148},
-  year={1905},
-  doi={10.1002/andp.19053220607},
-  award={Albert Einstein receveid the **Nobel Prize in Physics** 1921 *for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect*},
-  award_name={Nobel Prize}
-}
-
-@book{przibram1967letters,
-  bibtex_show={true},
-  title={Letters on wave mechanics},
-  author={Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year={1967},
-  publisher={Vision},
-  preview={wave-mechanics.gif},
-  abbr={Vision}
+@article{sjolund2022graph,
+bibtex_show={true},
+  title={Graph-based neural acceleration for nonnegative matrix factorization},
+  author={Sj{\"o}lund, Jens and B{\aa}nkestad, Maria},
+  journal={arXiv preprint arXiv:2202.00264},
+  year={2022},
+  abstract = {We describe a graph-based neural acceleration technique for nonnegative matrix factorization that builds upon a connection between matrices and bipartite graphs that is well-known in certain fields, e.g., sparse linear algebra, but has not yet been exploited to design graph neural networks for matrix computations. We first consider low-rank factorization more broadly and propose a graph representation of the problem suited for graph neural networks. Then, we focus on the task of nonnegative matrix factorization and propose a graph neural network that interleaves bipartite self-attention layers with updates based on the alternating direction method of multipliers. Our empirical evaluation on synthetic and two real-world datasets shows that we attain substantial acceleration, even though we only train in an unsupervised fashion on smaller synthetic instances.},
+  html = {https://arxiv.org/abs/2202.00264},
+  preview = {nmf.png},
 }

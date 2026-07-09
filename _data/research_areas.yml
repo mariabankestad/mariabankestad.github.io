@@ -1,0 +1,48 @@
+# Research areas shown on the /projects/ landing page.
+# `group` places each area under the "By method" / "By application" toggle.
+# A project lists one or more of these slugs in its `areas:` field and appears
+# under every area it names (many-to-many). Each area also has its own page.
+- slug: geometry
+  group: method
+  name: Geometry, symmetry & graphs
+  image: assets/img/model_overview.png
+  teaser: Equivariant graph neural networks that build symmetry into the model.
+  description: >
+    Molecules, crystals, and physical fields carry structure that a model should not have to
+    relearn from scratch. Rotate a molecule and its energy is unchanged; a fluid behaves the same
+    wherever you place the origin. I build this structure directly into the model through
+    equivariant graph neural networks, so the symmetry holds by construction and the model learns
+    more from less data.
+
+- slug: probabilistic
+  group: method
+  name: Probabilistic models & experimental design
+  image: assets/img/publication_preview/elliptical.png
+  teaser: Gaussian and elliptical processes for uncertainty and experimental design.
+  description: >
+    When experiments and simulations are expensive, the useful question is not only what to
+    predict, but where to measure next and how far to trust the answer. This theme develops Gaussian
+    and elliptical processes and the active-learning and experimental-design methods built on top of
+    them.
+
+- slug: differentiable-physics
+  group: method
+  name: Differentiable physics & scientific surrogates
+  image: assets/img/research/diffwake_overview.png
+  teaser: Differentiable simulators and neural surrogates for inverse problems.
+  description: >
+    Many scientific problems already have a physical model that is too slow, or not differentiable,
+    to sit inside a learning or optimization loop. Here I make the physics itself differentiable, or
+    replace its expensive parts with neural surrogates, so gradients flow from end to end, from
+    wind-farm layout to recovering structure from scattering.
+
+- slug: materials-chemistry
+  group: application
+  name: AI for material design and chemistry
+  image: assets/img/research/saxs_overview.png
+  teaser: Machine learning for molecules, materials, and the measurements that probe them.
+  description: >
+    A large part of my work is aimed at chemistry and materials: predicting molecular and crystal
+    properties, guiding which experiments to run, designing proteins that modify cellulose, and
+    reading structure out of measurements. These projects draw on the same methods, but they are
+    gathered here around the science they serve.

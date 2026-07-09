@@ -5,14 +5,49 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-description">{{ page.description }}</p>
+    {% if page.github %}
+      <style>
+        .project-code-link { margin-top: 0.4rem; }
+        .project-code-link a {
+          display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem;
+          border: 1px solid var(--global-divider-color); border-radius: 999px; padding: 0.2rem 0.8rem;
+          text-decoration: none; color: var(--global-text-color); transition: all 0.15s ease-in-out;
+        }
+        .project-code-link a:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+      </style>
+      <p class="project-code-link">
+        <a href="{{ page.github }}" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i> Code on GitHub
+        </a>
+      </p>
+    {% endif %}
   </header>
 
   <article>
     {{ content }}
   </article>
 
+  {% if page.areas %}
+    <style>
+      .project-areas { margin: 1.6rem 0 0.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem; }
+      .project-areas .pa-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--global-text-color-light); }
+      .pa-chip {
+        font-size: 0.82rem; border: 1px solid var(--global-theme-color); color: var(--global-theme-color);
+        border-radius: 999px; padding: 0.12rem 0.7rem; text-decoration: none; transition: all 0.15s ease-in-out;
+      }
+      .pa-chip:hover { background: var(--global-theme-color); color: #fff; }
+    </style>
+    <div class="project-areas">
+      <span class="pa-label">Part of</span>
+      {% for a in page.areas %}
+        {% assign areadef = site.data.research_areas | where: "slug", a | first %}
+        <a class="pa-chip" href="{{ a | prepend: '/projects/' | append: '/' | relative_url }}">{{ areadef.name }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
   {% if page.related_publications %}
-    <h2>References</h2>
+    <h2>Publications</h2>
     <div class="publications">
       {% bibliography --cited_in_order %}
     </div>

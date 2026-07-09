@@ -1134,3 +1134,34 @@ ninja-keys::part(ninja-input) {
 ninja-keys::part(ninja-input-wrapper) {
   background: var(--global-bg-color);
 }
+
+/* -------- Research pages (areas, tiles, project cards) -------- */
+.research-intro { margin-bottom: 1.6rem; }
+
+.research-toggle { display: inline-flex; border: 1px solid var(--global-theme-color); border-radius: 999px; overflow: hidden; margin-bottom: 1.8rem; }
+.research-toggle button {
+  background: transparent; color: var(--global-theme-color); border: none;
+  padding: 0.4rem 1.1rem; font-size: 0.9rem; cursor: pointer; transition: all 0.15s ease-in-out;
+}
+.research-toggle button.active { background: var(--global-theme-color); color: #fff; }
+
+.area-group[hidden] { display: none; }
+
+/* Area tiles on the landing */
+.area-tile { display: block; height: 100%; text-decoration: none; color: inherit; }
+.area-tile .card { border: 1px solid var(--global-divider-color); border-radius: 10px; overflow: hidden; height: 100%; transition: box-shadow 0.15s ease-in-out; }
+.area-tile:hover .card { box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+.area-tile img { width: 100%; height: 150px; object-fit: contain; padding: 12px; background: var(--global-card-bg-color); border-bottom: 1px solid var(--global-divider-color); }
+.area-tile .tile-body { padding: 0.9rem 1rem 1.1rem; }
+.area-tile h2 { font-size: 1.15rem; margin: 0 0 0.4rem; color: var(--global-theme-color); }
+.area-tile p { font-size: 0.9rem; color: var(--global-text-color-light); margin: 0; }
+
+/* Project cards (used on area pages) */
+.project-card .card { border: 1px solid var(--global-divider-color); border-radius: 10px; overflow: hidden; }
+.project-thumb { width: 100%; height: 170px; object-fit: contain; padding: 10px; background: var(--global-card-bg-color); border-bottom: 1px solid var(--global-divider-color); }
+.project-card .card-title { font-size: 1.06rem; line-height: 1.3; margin-bottom: 0.5rem; }
+.project-card .card-text { font-size: 0.87rem; color: var(--global-text-color-light); }
+
+/* Area page hero */
+.area-hero { width: 100%; max-height: 260px; object-fit: contain; padding: 14px; background: var(--global-card-bg-color); border: 1px solid var(--global-divider-color); border-radius: 12px; margin-bottom: 1.6rem; }
+.area-projects-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--global-text-color-light); margin: 2rem 0 1rem; display: block; }

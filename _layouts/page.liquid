@@ -5,7 +5,7 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-description">{{ page.description }}</p>
-    {% if page.github or page.website %}
+    {% if page.github or page.website or page.walkthrough %}
       <style>
         .project-code-link { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .project-code-link a {
@@ -24,6 +24,11 @@ layout: default
         {% if page.website %}
           <a href="{{ page.website }}" target="_blank" rel="noopener noreferrer">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Project page
+          </a>
+        {% endif %}
+        {% if page.walkthrough %}
+          <a href="{{ page.walkthrough }}" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-book-open"></i> Walkthrough
           </a>
         {% endif %}
       </div>

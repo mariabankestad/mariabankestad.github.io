@@ -8,6 +8,7 @@ area: differentiable-physics
 areas: [differentiable-physics, materials-chemistry]
 github: https://github.com/mariabankestad/aisaxs
 website: https://mariabankestad.github.io/aisaxs/
+walkthrough: https://mariabankestad.github.io/aisaxs/lnp_saxs_walkthrough.html
 related_publications: true
 ---
 

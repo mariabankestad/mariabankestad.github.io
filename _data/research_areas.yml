@@ -46,3 +46,25 @@
     properties, guiding which experiments to run, designing proteins that modify cellulose, and
     reading structure out of measurements. These projects draw on the same methods, but they are
     gathered here around the science they serve.
+
+- slug: energy
+  group: application
+  name: AI for energy & fluids
+  image: assets/img/research/diffwake_overview.png
+  teaser: Differentiable and learned models for wind energy and fluid flows.
+  description: >
+    Energy systems and fluid flows are governed by physics we understand well but cannot always
+    afford to simulate. This theme gathers work that makes those simulations fast and
+    differentiable, from optimizing and calibrating wind farms to standing in for expensive
+    fluid-dynamics solvers.
+
+- slug: life-sciences
+  group: application
+  name: AI for the life sciences
+  image: assets/img/research/lnp.png
+  teaser: Geometry and scattering for proteins and drug-delivery nanoparticles.
+  description: >
+    Biological structure is three-dimensional and hard to measure directly. Here I use geometric
+    deep learning and differentiable scattering analysis for problems in the life sciences, from
+    designing proteins that modify cellulose to reading the internal structure of the lipid
+    nanoparticles used to deliver nucleic-acid drugs.

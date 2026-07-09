@@ -5,7 +5,7 @@ description: Equivariant graph neural networks as fast surrogates for computatio
 img: assets/img/sim_smoke.gif
 importance: 2
 area: geometry
-areas: [geometry, differentiable-physics]
+areas: [geometry, differentiable-physics, energy]
 github: https://github.com/mariabankestad/SE2-GNN
 related_publications: true
 ---

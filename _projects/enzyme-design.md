@@ -5,7 +5,7 @@ description: Geometric deep learning and active learning to design proteins that
 img: assets/img/research/enzyme_ph.png
 importance: 5
 area: geometry
-areas: [geometry, materials-chemistry]
+areas: [geometry, materials-chemistry, life-sciences]
 ---
 
 Cellulose is the most abundant polymer on Earth, and modifying it enzymatically is a route to greener materials and processes. That modification depends on proteins that recognize and bind the carbohydrate in exactly the right way. Designing such proteins is a hard structural problem, because binding is governed by the three-dimensional fit between the protein pocket and the sugar, not by sequence alone.

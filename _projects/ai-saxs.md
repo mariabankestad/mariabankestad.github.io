@@ -5,7 +5,7 @@ description: A differentiable, ML-accelerated framework for SAXS analysis of nan
 img: assets/img/research/lnp.png
 importance: 2
 area: differentiable-physics
-areas: [differentiable-physics, materials-chemistry]
+areas: [differentiable-physics, materials-chemistry, life-sciences]
 github: https://github.com/mariabankestad/aisaxs
 website: https://mariabankestad.github.io/aisaxs/
 walkthrough: https://mariabankestad.github.io/aisaxs/lnp_saxs_walkthrough.html

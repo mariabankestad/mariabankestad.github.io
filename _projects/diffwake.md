@@ -5,7 +5,7 @@ description: A differentiable wind farm solver in JAX for layout optimization an
 img: assets/img/research/diffwake_overview.png
 importance: 1
 area: differentiable-physics
-areas: [differentiable-physics]
+areas: [differentiable-physics, energy]
 github: https://github.com/mariabankestad/DiffWake
 related_publications: true
 ---

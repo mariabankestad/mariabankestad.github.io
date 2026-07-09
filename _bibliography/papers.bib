@@ -8,6 +8,7 @@
   journal={arXiv preprint arXiv:2606.07561},
   year={2026},
   arxiv={2606.07561},
+  code={https://github.com/mariabankestad/gp-boundary-bias},
   abstract={Gaussian processes with stationary kernels on bounded domains exhibit inflated posterior variance near the boundary. Despite being a long-recognized artifact in geostatistics and a source of over-exploration in Bayesian optimization, the causes and effects of boundary-induced acquisition bias are underexplored. We trace the root cause to a simple geometric mechanism: the truncation of the kernel correlation neighborhood at the domain boundary creates an observation-independent distortion that worsens with dimensionality. We show how this distortion manifests across three acquisition classes: variance maximization concentrates selections at the corners, whereas negative integrated posterior variance and expected predictive information gain move selections inward to axis-aligned interior shells. These patterns arise without reference to any objective function, meaning that acquisition behavior can be dominated by kernel geometry rather than the desired task-specific uncertainty. To quantify this, we introduce a function-free selection-profile diagnostic for arbitrary acquisitions, kernels, and bounded-domain geometries.},
 }
 
@@ -19,7 +20,7 @@
   journal={arXiv preprint arXiv:2606.05200},
   year={2026},
   arxiv={2606.05200},
-  preview={saxs_overview.png},
+  preview={aisaxs_lnp.png},
   abstract={Lipid nanoparticles (LNPs) are efficient delivery systems for negatively charged nucleic acids. Their multi-component architecture yields a core-shell structure. Small-angle X-ray scattering (SAXS) is an important characterization technique for LNPs, but recovering internal structure and size distribution from SAXS is an inverse problem with non-unique solutions. Realistic models are often too expensive for systematic exploration. We introduce a machine-learning-accelerated, differentiable framework for SAXS analysis of heterogeneous, polydisperse LNPs. The forward model combines a core-shell particle with a Gaussian random-field interior, a neural surrogate for the monodisperse SAXS map, and a differentiable layer integrating over particle-size distributions. The surrogate reduces prediction cost by four orders of magnitude, while differentiability enables large-scale multi-start fitting and ensemble identifiability analysis. Applied to synthetic and experimental MC3 LNP data, the framework shows that near-identical SAXS fits can arise from distinct parameter modes, with the experimental fits dominated by a trade-off between size-distribution and interior-structure parameters.},
 }
 

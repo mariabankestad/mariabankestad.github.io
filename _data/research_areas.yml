@@ -39,7 +39,7 @@
 - slug: materials-chemistry
   group: application
   name: AI for material design and chemistry
-  image: assets/img/research/saxs_overview.png
+  image: assets/img/research/saxs_hero.png
   teaser: Machine learning for molecules, materials, and the measurements that probe them.
   description: >
     A large part of my work is aimed at chemistry and materials: predicting molecular and crystal

@@ -7,7 +7,7 @@ related_publications: true
 nav: false
 ---
 
-<img class="area-hero" src="{{ 'assets/img/research/saxs_overview.png' | relative_url }}" alt="AI for material design and chemistry">
+<img class="area-hero" src="{{ 'assets/img/research/saxs_hero.png' | relative_url }}" alt="AI for material design and chemistry">
 
 A large part of my work is aimed at chemistry and materials. The methods come from the other themes on this page, equivariant models, probabilistic methods, and differentiable physics, but here they are gathered around the science they serve: predicting properties, guiding experiments, designing proteins, and reading structure out of measurements. The projects below also appear under their method themes; this page collects them from the application side.
 

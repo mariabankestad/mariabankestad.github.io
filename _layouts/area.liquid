@@ -1,0 +1,20 @@
+---
+layout: page
+---
+{% comment %}
+  One research area page. The page sets `area: <slug>` and writes the overview text;
+  the hero image comes from _data/research_areas.yml and the project cards are every
+  project whose `areas:` list contains the slug.
+{% endcomment %}
+{% assign area = site.data.research_areas | where: "slug", page.area | first %}
+<p><img class="area-hero" src="{{ area.image | relative_url }}" alt="{{ page.title | replace: ' & ', ' and ' }}"></p>
+
+{{ content }}
+
+<p><span class="area-projects-label">Projects in this area</span></p>
+<div class="projects">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% assign area_projects = site.projects | where_exp: "p", "p.areas contains page.area" | sort: "importance" %}
+    {% for project in area_projects %}{% include projects.liquid %}{% endfor %}
+  </div>
+</div>

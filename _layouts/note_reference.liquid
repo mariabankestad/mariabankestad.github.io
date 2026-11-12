@@ -1,0 +1,8 @@
+{{ reference }}
+{% if entry.arxiv %}
+  <a href="https://arxiv.org/abs/{{ entry.arxiv }}">Paper</a>
+{% elsif entry.html %}
+  <a href="{{ entry.html }}">Paper</a>
+{% elsif entry.doi %}
+  <a href="https://doi.org/{{ entry.doi }}">Paper</a>
+{% endif %}

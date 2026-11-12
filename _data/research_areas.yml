@@ -1,0 +1,40 @@
+# Research areas shown on the /projects/ landing page.
+# `group` places each area under the "By method" / "By application" toggle.
+# A project lists one or more of these slugs in its `areas:` field and appears
+# under every area it names (many-to-many). Each area also has its own page,
+# _pages/area-<slug>.md, which holds the overview text (layout: area).
+- slug: geometry
+  group: method
+  name: Geometry, symmetry & graphs
+  image: assets/img/model_overview.png
+  teaser: Equivariant graph neural networks that build symmetry into the model.
+
+- slug: probabilistic
+  group: method
+  name: Probabilistic models & experimental design
+  image: assets/img/publication_preview/elliptical.png
+  teaser: Gaussian and elliptical processes for uncertainty and experimental design.
+
+- slug: differentiable-physics
+  group: method
+  name: Differentiable physics & scientific surrogates
+  image: assets/img/research/diffwake_overview.png
+  teaser: Differentiable simulators and neural surrogates for inverse problems.
+
+- slug: materials-chemistry
+  group: application
+  name: AI for material design and chemistry
+  image: assets/img/research/saxs_hero.png
+  teaser: Machine learning for molecules, materials, and the measurements that probe them.
+
+- slug: energy
+  group: application
+  name: AI for energy & fluids
+  image: assets/img/research/diffwake_overview.png
+  teaser: Differentiable and learned models for wind energy and fluid flows.
+
+- slug: life-sciences
+  group: application
+  name: AI for the life sciences
+  image: assets/img/research/lnp.png
+  teaser: Geometry and scattering for enzymes and drug-delivery nanoparticles.

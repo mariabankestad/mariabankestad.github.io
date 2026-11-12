@@ -9,35 +9,21 @@ related_publications: true
 compact_references: true
 ---
 
-In our experimental-design experiments, methods that chose measurements using a Gaussian process sometimes performed worse than Sobol sequences or farthest-point sampling. These space-filling methods spread measurements across the input range without using the measured outputs. I wanted to understand what the adaptive methods were choosing to measure.
+While working on experimental design, we found that Gaussian-process methods sometimes struggled to beat Sobol sampling and other simple space-filling designs. These methods use the model to choose the next measurement. I wanted to understand where they were sampling and why the model's guidance was not helping.
 
-Suppose we want to learn how a material property varies with temperature and composition. A Gaussian process (GP) estimates the property and its uncertainty from the measurements available. An acquisition function scores possible next measurements using that model. We measure, update the model and repeat.
-
-### Why boundaries matter
-
-With commonly used stationary kernels, nearby measurements inform each other. Inside the input domain, measurements can surround a point; near a boundary, part of that neighbourhood lies outside the allowed range. For the kernels and designs we studied, this produces higher uncertainty near the boundary.
-
-That uncertainty is not necessarily wrong. But choosing the most uncertain point can spend measurements near the boundary when our goal is to improve predictions across the whole domain.
-
-In standard GP regression with Gaussian noise, fixing the kernel settings and noise variance makes the posterior variance depend on measurement locations, not measured values. Acquisitions based only on that covariance can therefore favour particular regions without using any observed outputs.
-
-In our box-domain experiments, variance maximisation favoured corners, while two other criteria favoured interior shells {% cite bankestad2026boundary %}.
+One issue I noticed was the preference for boundaries. In our box-domain experiments, some acquisition functions—the rules that choose the next measurement—favoured corners, while others concentrated on interior shells. These patterns arose from the model and domain geometry without using observed function values {% cite bankestad2026boundary %}.
 
 <div class="row justify-content-center">
     <div class="col-sm-12 mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/research/gp_boundary_surface.png" title="Acquisition scores and selection densities" alt="Scores and selection densities for three measurement-selection criteria, showing corner and interior-shell preferences" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/research/gp_boundary_surface.png" title="Acquisition scores and selection densities" alt="Three acquisition criteria showing corner and interior-shell sampling preferences" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Left: acquisition scores for one sampling design. Right: selected-point densities across 10,000 designs. Variance maximisation favours corners; negative integrated posterior variance and expected predictive information gain favour interior shells in these experiments.
+    Acquisition scores for one design (left) and selected-point densities across 10,000 designs (right). Variance maximisation favours corners; the other two criteria favour interior shells in these experiments.
 </div>
 
-### What we learned and changed
+What interested me was that we could study these preferences separately from the function we wanted to learn. We developed a diagnostic to show where an acquisition tends to select points across sampling designs, without choosing a test function.
 
-We developed a selection-profile diagnostic that shows where an acquisition tends to select points across a collection of designs, without choosing a test function {% cite bankestad2026boundary %}. It exposes a sampling preference; whether that preference helps depends on the task.
+I also wanted to change the sampling behaviour. We developed methods to counter that boundary preference and make sampling respond to where the estimated function changes rapidly {% cite jarl2026observation %}. We explored alternative spatial preferences in Bayesian optimisation too, while keeping the predictive model fixed {% cite bankestad2026hidden %}.
 
-We then explored two adjustments. A geometric equaliser counters boundary bias in the acquisition scores. An input warp reshapes distances using the GP's current prediction, directing more measurements towards regions where the estimated function changes rapidly. The equaliser improved reconstruction in our experiments, with further gains from the warp {% cite jarl2026observation %}.
-
-In related Bayesian optimisation work, we kept the predictive GP fixed and changed the spatial preferences of its exploration term. Alternative preferences often improved optimisation performance early in our experiments {% cite bankestad2026hidden %}.
-
-These results show that sampling preferences matter, but do not establish that boundary bias explains every loss to Sobol. When an adaptive design underperforms, I now look at where it samples as well as its prediction errors.
+I still compare adaptive methods with simple space-filling baselines. When they perform worse, I look at where they sample as well as their prediction errors.

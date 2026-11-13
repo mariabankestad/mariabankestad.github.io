@@ -1167,7 +1167,7 @@ ninja-keys::part(ninja-input-wrapper) {
 .area-projects-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--global-text-color-light); margin: 2rem 0 1rem; display: block; }
 
 /* Project page header links (code, project page, walkthrough) */
-.project-code-link { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.project-code-link { margin: 0.5rem 0 1.2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .project-code-link a {
   display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem;
   border: 1px solid var(--global-divider-color); border-radius: 999px; padding: 0.2rem 0.8rem;
@@ -1176,7 +1176,7 @@ ninja-keys::part(ninja-input-wrapper) {
 .project-code-link a:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
 
 /* "Part of" chips linking a project to its research areas */
-.project-areas { margin: 1.6rem 0 0.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem; }
+.project-areas { margin: 2rem 0 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem; }
 .project-areas .pa-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--global-text-color-light); }
 .pa-chip {
   font-size: 0.82rem; border: 1px solid var(--global-theme-color); color: var(--global-theme-color);
@@ -1214,3 +1214,15 @@ a em, a strong { color: inherit; }
   color: var(--global-text-color-light); border: 1px solid var(--global-divider-color);
   border-radius: 999px; padding: 0.05rem 0.55rem; margin-bottom: 0.5rem;
 }
+
+/* Row of buttons under a project section */
+.project-links { display: flex; flex-wrap: wrap; margin: 1rem 0 1.4rem; }
+.project-links a {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-size: 0.9rem; font-weight: 500; padding: 0.4rem 1rem; border-radius: 6px; margin: 0 0.75rem 0.6rem 0;
+  border: 1px solid var(--global-theme-color); color: var(--global-theme-color);
+  background: transparent; text-decoration: none; transition: all 0.15s ease-in-out;
+}
+.project-links a:hover { background: var(--global-theme-color); color: #fff; }
+.project-links a.btn-main { background: var(--global-theme-color); color: #fff; }
+.project-links a.btn-main:hover { filter: brightness(1.12); }

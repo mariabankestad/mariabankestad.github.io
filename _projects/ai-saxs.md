@@ -7,19 +7,14 @@ importance: 2
 area: differentiable-physics
 areas: [differentiable-physics, materials-chemistry, life-sciences]
 website: https://mariabankestad.github.io/aisaxs/
-walkthrough: https://mariabankestad.github.io/aisaxs/lnp_saxs_walkthrough.html
 related_publications: true
 ---
 
-Small-angle X-ray scattering (SAXS) lets us look inside nanoparticles without taking them apart. It is a key technique for the lipid nanoparticles that deliver nucleic-acid drugs, where the internal structure affects how well the particle works. We want to learn about the particle's structure from the scattering curve, but the measurement hides much of it: different structures can produce nearly the same curve.
+Small-angle X-ray scattering (SAXS) shows nanoscale structure without taking the sample apart. But the measurement hides much of that structure: different structures can produce nearly the same curve. I focused the project on that ambiguity. Instead of looking for one best fit, I built models around the physical simulator that show which structures are compatible with a measurement, and what the curve can and cannot tell us.
 
-I focused the project on that ambiguity. Instead of looking for one best fit, I built the models around the physical simulator, so that we can investigate which structures are compatible with a measurement.
+### Lipid nanoparticles
 
-The first model is a differentiable, machine-learning-accelerated framework for SAXS analysis of heterogeneous, polydisperse nanoparticles {% cite bankestad2026saxs %}. A neural surrogate replaces the expensive per-particle scattering computation, cutting its cost by four orders of magnitude, and a differentiable layer integrates over the distribution of particle sizes. This makes it practical to fit from many starting points and to examine alternative parameter solutions. On real MC3 lipid-nanoparticle data, near-identical fits come from clearly different structures, mainly through a trade-off between the size distribution and the interior structure. You can [try it in the browser](https://mariabankestad.github.io/aisaxs/lnp.html); the [code](https://github.com/mariabankestad/aisaxs-poly) and [data](https://doi.org/10.5281/zenodo.20338599) are open.
-
-The second model, applied to cellulose, uses flow matching for amortized inference. It learns an approximation to the joint posterior over the structural parameters, that is, the combinations of parameters compatible with the measurement and the model, so it keeps several plausible explanations instead of reporting a single fit, and it shows how the conclusions change when more is known about a sample, for example when some parameters are fixed by other measurements. A new question needs no retraining. The paper is under review; you can [try the model](https://mariabankestad.github.io/aisaxs/cellulose.html), read [how it works](https://mariabankestad.github.io/aisaxs/model.html) and see the [code](https://github.com/mariabankestad/aisaxs-sbi).
-
-To make these results usable outside our group, I also built visualisations and a step-by-step walkthrough of the analysis.
+Lipid nanoparticles deliver nucleic-acid drugs, and their internal structure affects how well they work. Our framework makes realistic SAXS analysis of these particles practical {% cite bankestad2026saxs %}. A neural surrogate replaces the expensive scattering computation, about four orders of magnitude faster, and a differentiable layer accounts for the spread of particle sizes. This makes it possible to fit from many starting points. On real MC3 lipid-nanoparticle data, near-identical fits come from clearly different structures, mainly through a trade-off between particle size and interior structure.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -27,23 +22,31 @@ To make these results usable outside our group, I also built visualisations and 
     </div>
 </div>
 <div class="caption">
-    The framework: simulate scattering per particle, learn a neural surrogate, integrate over polydispersity, and use automatic differentiation to fit experimental data.
+    Simulate scattering per particle, learn a neural surrogate, integrate over particle sizes, and fit experimental data with automatic differentiation.
 </div>
+
+<p class="project-links">
+  <a class="btn-main" href="https://mariabankestad.github.io/aisaxs/lnp.html"><i class="fa-solid fa-play"></i> Try it</a>
+  <a href="https://mariabankestad.github.io/aisaxs/lnp_saxs_walkthrough.html"><i class="fa-solid fa-book-open"></i> Walkthrough</a>
+  <a href="https://github.com/mariabankestad/aisaxs-poly"><i class="fa-brands fa-github"></i> Code</a>
+  <a href="https://doi.org/10.5281/zenodo.20338599"><i class="fa-solid fa-database"></i> Data</a>
+</p>
+
+### Cellulose
+
+The second model uses flow matching to learn all the combinations of structural parameters that fit a curve, not a single answer. When we already know some parameters from other measurements, we can give them to the model as exact values or with an uncertainty, and the answer updates without retraining. The paper is under review.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/research/saxs_accuracy.png" title="Surrogate accuracy" alt="Surrogate-predicted SAXS curves overlaid on physics-based curves" class="img-fluid rounded z-depth-1" %}
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/research/saxs_conditional.gif' | relative_url }}" alt="Animation of a toy example: a curve gives a distribution over size spread and separation, and added information changes it without retraining." loading="lazy">
     </div>
 </div>
 <div class="caption">
-    The neural surrogate reproduces the physics-based SAXS curves closely across the relevant range, accurately enough to use in fitting.
+    A toy example: telling the model what we know about one parameter changes the distribution over the others, without retraining.
 </div>
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/research/saxs_conditional.gif' | relative_url }}" alt="Animation of a toy example: a curve gives a posterior over size spread and separation, and added information changes that posterior without retraining." loading="lazy">
-    </div>
-</div>
-<div class="caption">
-    A toy example of the second model: a scattering curve gives a distribution over two structural parameters, and telling the model more about one parameter changes the distribution without retraining.
-</div>
+<p class="project-links">
+  <a class="btn-main" href="https://mariabankestad.github.io/aisaxs/cellulose.html"><i class="fa-solid fa-play"></i> Try it</a>
+  <a href="https://mariabankestad.github.io/aisaxs/model.html"><i class="fa-solid fa-book-open"></i> How it works</a>
+  <a href="https://github.com/mariabankestad/aisaxs-sbi"><i class="fa-brands fa-github"></i> Code</a>
+</p>

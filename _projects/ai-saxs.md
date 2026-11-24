@@ -28,6 +28,7 @@ Lipid nanoparticles deliver nucleic-acid drugs, and their internal structure aff
 <p class="project-links">
   <a class="btn-main" href="https://mariabankestad.github.io/aisaxs/lnp.html"><i class="fa-solid fa-play"></i> Try it</a>
   <a href="https://mariabankestad.github.io/aisaxs/lnp_saxs_walkthrough.html"><i class="fa-solid fa-book-open"></i> Walkthrough</a>
+  <a href="https://arxiv.org/abs/2606.05200"><i class="fa-solid fa-file-lines"></i> Paper</a>
   <a href="https://github.com/mariabankestad/aisaxs-poly"><i class="fa-brands fa-github"></i> Code</a>
   <a href="https://doi.org/10.5281/zenodo.20338599"><i class="fa-solid fa-database"></i> Data</a>
 </p>
@@ -48,5 +49,6 @@ The second model uses flow matching to learn all the combinations of structural 
 <p class="project-links">
   <a class="btn-main" href="https://mariabankestad.github.io/aisaxs/cellulose.html"><i class="fa-solid fa-play"></i> Try it</a>
   <a href="https://mariabankestad.github.io/aisaxs/model.html"><i class="fa-solid fa-book-open"></i> How it works</a>
+  <a href="https://arxiv.org/abs/2611.18773"><i class="fa-solid fa-file-lines"></i> Paper</a>
   <a href="https://github.com/mariabankestad/aisaxs-sbi"><i class="fa-brands fa-github"></i> Code</a>
 </p>

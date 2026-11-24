@@ -6,7 +6,7 @@
     <div class="card-body">
       {% if project.status == "ongoing" %}<span class="project-status">Ongoing</span>{% endif %}
       <h2 class="card-title">
-        <a class="stretched-link" href="{% if project.card_url %}{{ project.card_url }}{% else %}{{ project.url | relative_url }}{% endif %}">{{ project.title }}</a>
+        <a class="stretched-link" href="{% if project.card_url %}{{ project.card_url }}{% else %}{{ project.url | relative_url }}{% endif %}"{% if project.card_url %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ project.title }}{% if project.card_url %}&nbsp;<i class="fa-solid fa-arrow-up-right-from-square fa-xs" aria-hidden="true"></i><span class="sr-only"> (opens in a new tab)</span>{% endif %}</a>
       </h2>
       <p class="card-text">{{ project.description }}</p>
       {% if project.github %}

@@ -1,12 +1,13 @@
 ---
 layout: page
-title: Probabilistic models & experimental design
+title: Bayesian experimental design & optimization
 description: Addressing boundary bias in Bayesian experimental design and optimization.
 img: assets/img/research/warped_gp.png
 importance: 3
 area: probabilistic
 areas: [probabilistic]
-github: https://github.com/mariabankestad/gp-boundary-bias
+website: https://mariabankestad.github.io/gp-design/
+card_url: https://mariabankestad.github.io/gp-design/
 related_publications: true
 ---
 

@@ -7,6 +7,7 @@ importance: 2
 area: differentiable-physics
 areas: [differentiable-physics, materials-chemistry, life-sciences]
 website: https://mariabankestad.github.io/aisaxs/
+card_url: https://mariabankestad.github.io/aisaxs/
 related_publications: true
 ---
 
